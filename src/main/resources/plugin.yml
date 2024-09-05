@@ -1,0 +1,5 @@
+name: rating
+version: '1.0-SNAPSHOT'
+main: ru.vidoskim.rating.Rating
+api-version: '1.20'
+authors: [ Vidoskim ]
