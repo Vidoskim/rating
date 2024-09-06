@@ -55,6 +55,8 @@ public class ExampleListener implements Listener {
         Player player = event.getPlayer();
         
         // Get the user variable / Получаем переменную юзера
+        // By the way, the variable is never null, so you can not worry (in case of absence of a player in the database - the plugin itself will create it)
+        // Переменная кстати никогда не бывает null, так что можете не волноваться (в случае отсутствия игрока в БД - плагин сам его создаст)
         RatingUser user = ratingUserService.getUser(player);
         
         // Dropping to the starting rating / Сбрасываем на стартовый рейтинг
