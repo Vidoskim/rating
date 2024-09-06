@@ -43,7 +43,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ru.vidoskim.rating.service.RatingUserService;
 
 public final class ExamplePlugin extends JavaPlugin {
-
     @Override
     public void onEnable() {
         // Getting the plugin / Получение плагина
