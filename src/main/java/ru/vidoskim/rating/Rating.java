@@ -3,11 +3,9 @@ package ru.vidoskim.rating;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
-import lombok.Getter;
 import lombok.SneakyThrows;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import ru.vidoskim.rating.api.RatingApi;
 import ru.vidoskim.rating.model.RatingUser;
 import ru.vidoskim.rating.service.RatingUserService;
 import ru.vidoskim.rating.service.Service;
@@ -27,10 +25,6 @@ public final class Rating extends JavaPlugin {
 
     private final FileConfiguration config = getConfig();
     private JdbcPooledConnectionSource connectionSource;
-
-    @Getter
-    @SuppressWarnings("unused")
-    private static RatingApi api;
 
     @Override
     public void onEnable() {
@@ -67,6 +61,15 @@ public final class Rating extends JavaPlugin {
 
         TableCreatorUtil.create(connectionSource);
         DaoCreatorUtil.create(connectionSource);
+    }
+
+    @SuppressWarnings("unused")
+    public Object getService(Class<?> serviceClass) {
+        Object object = serviceMap.get(serviceClass);
+        if(object instanceof Service) {
+            return object;
+        }
+        return null;
     }
 
     @SuppressWarnings("all")
