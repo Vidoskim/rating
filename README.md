@@ -24,8 +24,6 @@ This solution is designed for Bukkit/Paper servers in minecraft that need rating
 </dependency>
 ```
 
-### 🎈 Use / Использование:
-
 ## 🎨 Futures / Возможности
 ### 👤 RatingUser:
 - User model, stores **only** username and rating.
@@ -36,8 +34,37 @@ This solution is designed for Bukkit/Paper servers in minecraft that need rating
 
 ## ⛑ Examples / Примеры:
 
+### Receiving services / Получение сервисов:
+
+```java
+package ru.vidoskim.rating;
+
+import org.bukkit.plugin.java.JavaPlugin;
+import ru.vidoskim.rating.service.RatingUserService;
+
+public final class ExamplePlugin extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        // Getting the plugin / Получение плагина
+        Rating ratingAPI = (Rating) getServer().getPluginManager()
+                .getPlugin("rating");
+
+        assert ratingAPI != null;
+        // Receiving service / Получение сервиса
+        RatingUserService ratingUserService = ratingAPI.getService(RatingUserService.class);
+    }
+
+    @Override
+    public void onDisable() {
+    }
+}
+```
+
 ### Example join listener / Пример ивента захода:
 ```java
+package ru.vidoskim.rating.listener;
+
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
