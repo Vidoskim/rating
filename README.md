@@ -14,7 +14,7 @@ This solution is designed for Bukkit/Paper servers in minecraft that need rating
 #### Maven:
 1. Install the project on your device / Установите проект себе на устройство
 2. Via maven run install / Через maven запустите install
-3. Add this to your pom.yml: / Добавьте в свой pom.yml это:
+3. Add this to your pom.yml / Добавьте в свой pom.yml это:
 ```xml
 <dependency>
     <groupId>ru.vidoskim</groupId>
@@ -33,3 +33,40 @@ This solution is designed for Bukkit/Paper servers in minecraft that need rating
 ### 🔧 RatingUserService:
 - Contains basic methods for working with the user model.
 - Содержит основные методы для работы с моделью юзера.
+
+### Examples / Примеры:
+
+```java
+import lombok.RequiredArgsConstructor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import ru.vidoskim.rating.model.RatingUser;
+import ru.vidoskim.rating.service.RatingUserService;
+
+@RequiredArgsConstructor
+public class ExampleListener implements Listener {
+    private final RatingUserService ratingUserService;
+
+    @EventHandler
+    private void onJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        
+        // Get the user variable / Получаем переменную юзера
+        RatingUser user = ratingUserService.getUser(player);
+        
+        // Dropping to the starting rating / Сбрасываем на стартовый рейтинг
+        ratingUserService.resetPlayerRating(player);
+        
+        // Setting player rating / Устанавливаем рейтинг игроку
+        ratingUserService.setPlayerRating(player, 0);
+        
+        // Adding player rating / Добавляем игроку рейтинг
+        ratingUserService.addPlayerRating(player, 1);
+        
+        // Taking player rating / Забираем у игрока рейтинг
+        ratingUserService.takePlayerRating(player, 1);
+    }
+}
+```
