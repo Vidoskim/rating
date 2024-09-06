@@ -37,7 +37,7 @@ This solution is designed for Bukkit/Paper servers in minecraft that need rating
 ### Receiving services / Получение сервисов:
 
 ```java
-package ru.vidoskim.rating;
+package ru.vidoskim.example;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.vidoskim.rating.service.RatingUserService;
@@ -63,7 +63,7 @@ public final class ExamplePlugin extends JavaPlugin {
 
 ### Example join listener / Пример ивента захода:
 ```java
-package ru.vidoskim.rating.listener;
+package ru.vidoskim.example.listener;
 
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
