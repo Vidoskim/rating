@@ -1,7 +1,7 @@
 # Rating Tool Bukkit Plugin
 ### 📜 Description / Описание:
-This solution is designed for Bukkit/Paper servers in minecraft, which needs rating. 
-Данное решение предназначено для Bukkit/Paper серверов в minecraft, который нужен рейтинг.
+This solution is designed for Bukkit/Paper servers in minecraft that need rating. 
+Данное решение предназначено для Bukkit/Paper серверов в minecraft, которым нужен рейтинг.
 
 ### ⚠ Attention / Внимание ⚠:
 ```yaml
