@@ -36,6 +36,7 @@ This solution is designed for Bukkit/Paper servers in minecraft that need rating
 
 ### Examples / Примеры:
 
+#### Example join listener / Пример ивента захода
 ```java
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
