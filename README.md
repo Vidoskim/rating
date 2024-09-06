@@ -11,6 +11,10 @@ This solution is designed for Bukkit/Paper servers in minecraft, which needs rat
 
 
 ### 🎀 Importing to your project // Импорт в ваш проект:
+#### Maven:
+1. Install the project on your device / Установите проект себе на устройство
+2. Via maven run install / Через maven запустите install
+3. Add this to your pom.yml: / Добавьте в свой pom.yml это:
 ```xml
 <dependency>
     <groupId>ru.vidoskim</groupId>
