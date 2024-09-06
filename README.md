@@ -34,9 +34,9 @@ This solution is designed for Bukkit/Paper servers in minecraft that need rating
 - Contains basic methods for working with the user model.
 - Содержит основные методы для работы с моделью юзера.
 
-### Examples / Примеры:
+## Examples / Примеры:
 
-#### Example join listener / Пример ивента захода
+### Example join listener / Пример ивента захода:
 ```java
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
